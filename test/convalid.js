@@ -13,7 +13,50 @@ describe("convalid", function() {
   it("should be an object", function() {
     assert.isObject(convalid);
   });
-convalid.isNumber(3);
+
+  describe("#isEmpty", function() {
+
+    const pass = [
+      "",
+      undefined,
+      null
+    ];
+
+    const fail = [
+      NaN,
+      "hello",
+      1,
+      0,
+      false,
+      true, {
+        hello: "what"
+      }, -1, [1],
+      Infinity,
+      new Number(2)
+    ];
+
+    it("should be a function", function() {
+      assert.isFunction(convalid.isEmpty);
+    });
+
+    it("should return a boolean", function() {
+      assert.isBoolean(convalid.isEmpty("hello"));
+    });
+
+    pass.forEach(pass => {
+      it(`should return true for '${pass}'`, function() {
+        assert.equal(convalid.isEmpty(pass), true);
+      });
+    });
+
+    fail.forEach(fail => {
+      it(`should return false for '${fail}'`, function() {
+        assert.equal(convalid.isEmpty(fail), false);
+      });
+    });
+
+  });
+
   describe("#passRequired", function() {
 
     const pass = [
@@ -21,12 +64,9 @@ convalid.isNumber(3);
       1,
       0,
       false,
-      true,
-      {
+      true, {
         hello: "what"
-      },
-      -1,
-      [1],
+      }, -1, [1],
       Infinity,
       new Number(2)
     ];

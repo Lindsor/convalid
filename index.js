@@ -26,11 +26,7 @@ module.exports = exports = {
     if (!value) return false;
 
     /* If the value is a string then make sure its not empty */
-    if (typeof value === "string") {
-
-      return value.length > 0;
-
-    }
+    if (this.isEmpty(value)) return false; 
 
     /* If all the above checks pass then its valid */
     return true;
@@ -40,6 +36,26 @@ module.exports = exports = {
   passMin: notImplemented,
   passMax: notImplemented,
   passStep: notImplemented,
+
+  /**
+   * Checks if the value is empty.
+   * This only returns true if:
+   *   value === null
+   *   value === undefined
+   *   value === ""
+   * @param  {Mixed}  value  The value to check.
+   * @return {Boolean}       True if empty, false otherwise.
+   */
+  isEmpty: function(value) {
+
+    /* Double equal check for null */
+    if (value == null) return true;
+
+    /* Cast to string */
+    value = value + "";
+
+    return value.length === 0;
+  },
 
   isNumber: notImplemented,
   isGreaterThan: notImplemented,
