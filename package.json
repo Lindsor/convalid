@@ -1,0 +1,25 @@
+{
+  "name": "convalid",
+  "version": "1.0.0",
+  "description": "Validator",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lindsor/convalid.git"
+  },
+  "keywords": [
+    "validator",
+    "forms",
+    "validate",
+    "convalid"
+  ],
+  "author": "Marcelo Luz <marcelopluz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lindsor/convalid/issues"
+  },
+  "homepage": "https://github.com/Lindsor/convalid#readme"
+}
