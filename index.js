@@ -1,7 +1,16 @@
 'use strict';
 
+function notImplemented() {
+  console.info("Not yet implemented");
+};
+
 module.exports = exports = {
 
+  /**
+   * Checks if the value passes the `required` restriction.
+   * @param  {Mixed}    value   The value to check for validity.
+   * @return {Boolean}          True if passes constraint, false otherwise.
+   */
   passRequired: function(value) {
 
     /**
@@ -26,6 +35,27 @@ module.exports = exports = {
     /* If all the above checks pass then its valid */
     return true;
 
-  }
+  },
+
+  passMin: notImplemented,
+  passMax: notImplemented,
+  passStep: notImplemented,
+
+  isNumber: notImplemented,
+  isGreaterThan: notImplemented,
+  isLessThan: notImplemented,
+  isEmail: notImplemented,
+  isTel: notImplemented,
+  isDateTime: notImplemented,
+  isDate: notImplemented,
+  isMonth: notImplemented,
+  isDay: notImplemented,
+  isYear: notImplemented,
+  isChecked: notImplemented,
+  isColor: notImplemented,
+  isUrl: notImplemented,
+  isImage: notImplemented,
+  isTime: notImplemented,
+  isWeek: notImplemented
 
 };

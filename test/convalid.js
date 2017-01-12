@@ -13,7 +13,7 @@ describe("convalid", function() {
   it("should be an object", function() {
     assert.isObject(convalid);
   });
-
+convalid.isNumber(3);
   describe("#passRequired", function() {
 
     const pass = [
